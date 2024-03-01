@@ -18,14 +18,14 @@ RUN apt-get -y update
 
 RUN curl -y --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
-RUN git clone https://github.com/komaria10003099/pessera.git
+RUN git clone https://github.com/cjdelisle/packetcrypt_rs
 
-WORKDIR pessera
+WORKDIR packetcrypt_rs
 
 RUN cargo build --release
 
 FROM debian:buster
-LABEL org.opencontainers.image.source https://github.com/komaria10003099/destera
+LABEL org.opencontainers.image.source https://github.com/ovrclk/pkt-miner
 
 WORKDIR /
 
